@@ -57,7 +57,6 @@ const Matcher = () => {
       resumeText: resumeText,
       jobDescription: jobDescription,
     };
-
     setHistory((prev) => [historyItem, ...prev.slice(0, 9)]); // Keep last 10 items
   };
 
@@ -227,7 +226,7 @@ const Matcher = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center space-x-3 ml-4">
+                      <div className="flex flex-col md:flex-row items-center space-x-3 ml-4">
                         <div className="text-right">
                           <div className="text-2xl font-bold text-green-600">
                             {Math.round(item.result.percent)}%
@@ -237,16 +236,16 @@ const Matcher = () => {
                           </div>
                         </div>
 
-                        <div className="flex flex-col space-y-1">
+                        <div className="flex flex-col space-y-1 mt-3">
                           <button
                             onClick={() => loadFromHistory(item)}
-                            className="bg-blue-500 text-white px-3 py-1 rounded-lg text-xs hover:bg-blue-600 transition-all"
+                            className="bg-blue-500 text-white px-5 py-1 rounded-lg text-xs hover:bg-blue-600 transition-all"
                           >
                             Load
                           </button>
                           <button
                             onClick={() => deleteHistoryItem(item.id)}
-                            className="bg-red-500 text-white px-3 py-1 rounded-lg text-xs hover:bg-red-600 transition-all"
+                            className="bg-red-500 text-white px-3 py-1 mt-2 rounded-lg text-xs hover:bg-red-600 transition-all"
                           >
                             Delete
                           </button>
